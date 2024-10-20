@@ -1,5 +1,6 @@
 package tests;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.net.MalformedURLException;
@@ -12,6 +13,7 @@ import static io.qameta.allure.Allure.step;
 
 public class SearchTest extends TestBase {
 
+    @Tag("mobile")
     @Test
     void successfulSearchTest() throws MalformedURLException, InterruptedException {
         step("Search", () -> {
