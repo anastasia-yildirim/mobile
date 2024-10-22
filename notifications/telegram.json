@@ -1,9 +1,9 @@
 {
   "base": {
-    "project": "${JOB_BASE_NAME}",
+    "project": "Mobile Tests",
     "environment": "remote",
-    "comment": "Test launch in Jenkins",
-    "reportLink": "${BUILD_URL}",
+    "comment": "Test launch",
+    "reportLink": "",
     "language": "en",
     "messenger": "telegram",
     "allureFolder": "allure-report/",
