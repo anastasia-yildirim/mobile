@@ -2,7 +2,7 @@
   "base": {
     "project": "Mobile Tests",
     "environment": "remote",
-    "comment": "Test launch",
+    "comment": "Test launch in Jenkins",
     "reportLink": "",
     "language": "en",
     "messenger": "telegram",
