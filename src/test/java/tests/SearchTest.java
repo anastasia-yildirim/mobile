@@ -1,5 +1,6 @@
 package tests;
 
+import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -22,6 +23,23 @@ public class SearchTest extends TestBase {
         });
         step("Verify content found", () -> {
             $$(id("org.wikipedia.alpha:id/page_list_item_title")).shouldHave(sizeGreaterThan(0));
+        });
+    }
+
+    @Tag("mobile")
+    @Test
+    void failingOpenPageTest() throws MalformedURLException, InterruptedException {
+        String pageText = "Last Universal Common Ancestor";
+
+        step("Search and open page", () -> {
+            $(accessibilityId("Search Wikipedia")).click();
+            $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Göktepe");
+
+            $$(className("android.view.ViewGroupText"))
+                    .filter(Condition.matchText(".*Göktepe, Zara.*"))
+                    .first()
+                    .$(id("org.wikipedia.alpha:id/page_list_item_title"))
+                    .click();
         });
     }
 }
