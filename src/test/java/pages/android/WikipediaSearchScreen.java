@@ -8,12 +8,11 @@ import static io.appium.java_client.AppiumBy.id;
 
 public class WikipediaSearchScreen {
 
-    private final SelenideElement SEARCH_BAR_AREA = $(accessibilityId("Search Wikipedia"));
-    private final SelenideElement SEARCH_BAR_ELEMENT = $(id("org.wikipedia.alpha:id/search_src_text"));
+    private final SelenideElement searchCard = $(accessibilityId("Search Wikipedia"));
+    private final SelenideElement searchBar = $(id("org.wikipedia.alpha:id/search_src_text"));
 
     public void searchFor(String query) {
-        SEARCH_BAR_AREA.click();
-        SEARCH_BAR_ELEMENT.sendKeys(query);
+        searchCard.click();
+        searchBar.sendKeys(query);
     }
-
 }

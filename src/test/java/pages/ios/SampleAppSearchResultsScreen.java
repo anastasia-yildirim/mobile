@@ -7,9 +7,9 @@ import static io.appium.java_client.AppiumBy.accessibilityId;
 
 public class SampleAppSearchResultsScreen {
 
-    private final SelenideElement TEXT_OUTPUT = $(accessibilityId("Text Output"));
+    private final SelenideElement textOutput = $(accessibilityId("Text Output"));
 
     public String getResult() {
-        return TEXT_OUTPUT.getText();
+        return textOutput.getText();
     }
 }

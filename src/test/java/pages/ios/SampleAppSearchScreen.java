@@ -7,13 +7,13 @@ import static io.appium.java_client.AppiumBy.accessibilityId;
 
 public class SampleAppSearchScreen {
 
-    private final SelenideElement TEXT_BUTTON = $(accessibilityId("Text Button"));
-    private final SelenideElement TEXT_INPUT = $(accessibilityId("Text Input"));
+    private final SelenideElement textButton = $(accessibilityId("Text Button"));
+    private final SelenideElement textInput = $(accessibilityId("Text Input"));
 
     public void searchFor(String query){
-        TEXT_BUTTON.click();
-        TEXT_INPUT.click();
-        TEXT_INPUT.sendKeys(query);
-        TEXT_INPUT.pressEnter();
+        textButton.click();
+        textInput.click();
+        textInput.sendKeys(query);
+        textInput.pressEnter();
     }
 }
