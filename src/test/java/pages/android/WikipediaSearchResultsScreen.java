@@ -19,6 +19,6 @@ public class WikipediaSearchResultsScreen {
     public String tryToOpenFoundArticle(int articleNumber) {
         foundItems.get(articleNumber).click();
 
-        return textArea.getFirst().getAttribute("text");
+        return textArea.get(0).getAttribute("text");
     }
 }
