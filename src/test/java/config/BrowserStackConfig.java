@@ -7,9 +7,6 @@ import org.aeonbits.owner.Config;
 })
 public interface BrowserStackConfig extends Config {
 
-    @Key("appUrl")
-    String appUrl();
-
     @Key("remoteWebDriverUrl")
     String remoteWebDriverUrl();
 }

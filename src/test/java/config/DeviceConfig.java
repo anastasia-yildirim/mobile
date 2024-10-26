@@ -12,4 +12,7 @@ public interface DeviceConfig extends Config {
 
     @Key("platform.version")
     String platformVersion();
+
+    @Key("appUrl")
+    String appUrl();
 }
