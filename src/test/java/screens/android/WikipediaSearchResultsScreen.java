@@ -1,4 +1,4 @@
-package pages.android;
+package screens.android;
 
 import com.codeborne.selenide.ElementsCollection;
 
@@ -16,7 +16,7 @@ public class WikipediaSearchResultsScreen {
         return foundItems.size();
     }
 
-    public String tryToOpenFoundArticle(int articleNumber) {
+    public String ppenFoundArticle(int articleNumber) {
         foundItems.get(articleNumber).click();
 
         return textArea.get(0).getAttribute("text");

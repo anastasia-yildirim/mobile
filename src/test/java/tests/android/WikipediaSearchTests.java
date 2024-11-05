@@ -2,46 +2,70 @@ package tests.android;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import pages.android.WikipediaSearchResultsScreen;
-import pages.android.WikipediaSearchScreen;
+import screens.android.WikipediaArticleScreen;
+import screens.android.WikipediaSearchResultsScreen;
+import screens.android.WikipediaSearchScreen;
 import tests.TestBase;
 
 import java.net.MalformedURLException;
 
+import static com.codeborne.selenide.Selenide.back;
+import static com.codeborne.selenide.Selenide.sleep;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Tag("android")
 public class WikipediaSearchTests extends TestBase {
 
-    WikipediaSearchScreen searchScreen = new WikipediaSearchScreen();
-    WikipediaSearchResultsScreen searchResultsScreen = new WikipediaSearchResultsScreen();
-    String result;
+    private final WikipediaSearchScreen searchScreen = new WikipediaSearchScreen();
+    private final WikipediaSearchResultsScreen searchResultsScreen = new WikipediaSearchResultsScreen();
+    private final WikipediaArticleScreen articleScreen = new WikipediaArticleScreen();
+    public String result;
+    public static String deviceHost = System.getProperty("deviceHost");
 
     @Test
-    void successfulSearchTest() throws MalformedURLException, InterruptedException {
+    void successfulSearchTest() {
+
+        if (deviceHost.equals("emulator")) {
+            step("Skip onboarding", () -> {
+            back();
+            });
+        }
         String query = "Appium";
 
-        step("Perform search", () ->
-                searchScreen.searchFor(query));
+        step("Perform search", () -> {
+            searchScreen.searchFor(query);
+            sleep(500);
+        });
         step("Verify result", () -> {
             assertThat(searchResultsScreen.getResultsCount()).isGreaterThan(0);
         });
     }
 
     @Test
-    void unsuccessfulSearchAndOpenFirstResultTest() throws MalformedURLException, InterruptedException {
-        String query = "Italy";
+    void successfulSearchAndOpenFirstResultTest() {
+
+        String query = "Madagascar";
         int articleNumber = 0;
 
-        step("Perform search", () ->
-                searchScreen.searchFor(query));
+
+        if (deviceHost.equals("emulator")) {
+            step("Skip onboarding", () -> {
+            back();
+            });
+        }
+
+        step("Perform search", () -> {
+            searchScreen.searchFor(query);
+            sleep(500);
+        });
         step("Open page", () -> {
-            result = searchResultsScreen.tryToOpenFoundArticle(articleNumber);
+            result = searchResultsScreen.ppenFoundArticle(articleNumber);
+            sleep(3000);
         });
 
         step("Verify result", () -> {
-            assertThat(result).isEqualTo("An error occurred");
+            assertThat(articleScreen.getTitle()).isEqualTo(query);
         });
     }
 }

@@ -1,4 +1,4 @@
-package pages.ios;
+package screens.ios;
 
 import com.codeborne.selenide.SelenideElement;
 
