@@ -20,14 +20,12 @@ public class BrowserStackDriver implements WebDriverProvider {
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
         BrowserStackConfig browserStackConfig = ConfigLoader.getBrowserStackConfig();
+        AuthConfig authConfig = ConfigLoader.getAuthConfig();
 
         MutableCapabilities caps = new MutableCapabilities();
 
-        AuthConfig authConfig = ConfigLoader.getAuthConfig();
         caps.setCapability("browserstack.user", authConfig.username());
         caps.setCapability("browserstack.key", authConfig.password());
-
-
 
         DeviceConfig deviceConfig = ConfigLoader.getDeviceConfig();
         caps.setCapability("device", deviceConfig.deviceName());
@@ -37,6 +35,8 @@ public class BrowserStackDriver implements WebDriverProvider {
         caps.setCapability("project", "Wikipedia Mobile Tests Java Project");
         caps.setCapability("build", "browserstack-build-1");
         caps.setCapability("name", "wikipedia_tests");
+
+        caps.setCapability("fullReset", true);
 
         try {
             return new RemoteWebDriver (
