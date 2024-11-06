@@ -24,13 +24,19 @@ ____
 ## <a name="Технологии и инструменты">**Технологии и инструменты:**</a>
 
 <p align="center">  
-<a href="https://www.java.com/"><img src="images/logo/Java.svg" width="50" height="50"  alt="Java"/></a>  
-<a href="https://junit.org/junit5/"><img src="images/logo/JUnit5.svg" width="50" height="50"  alt="JUnit 5"/></a>  
-<a href="https://gradle.org/"><img src="images/logo/Gradle.svg" width="50" height="50"  alt="Gradle"/></a>  
-<a href="https://selenide.org/"><img src="images/logo/Selenide.svg" width="50" height="50"  alt="Selenide"/></a>   
-<a href="ht[images](images)tps://github.com/allure-framework/allure2"><img src="images/logo/Allure.svg" width="50" height="50"  alt="Allure"/></a>    
-<a href="https://www.jenkins.io/"><img src="images/logo/Jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>  
-<a href="https://www.browserstack.com/"><img src="images/logo/Browserstack.svg" width="50" height="50"  alt="BrowserStack"/></a>  
+<a href="https://www.java.com/"><img src="images/logo/Java.svg" width="40" height="40"  alt="Java"/></a>  
+<a href="https://www.jetbrains.com/idea/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg" title="IntelliJ Idea" alt="IntelliJ Idea" width="40" height="40"/></a> 
+<a href="https://www.android.com/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg" title="Android" alt="Android" width="40" height="40"/></a> 
+<a href="https://developer.android.com/studio"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg" title="Android Studio" alt="Android Studio" width="40" height="40"/></a>
+<a href="https://git-scm.com/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" title="Git" alt="Git" width="40" height="40"/> </a> 
+<a href="https://junit.org/junit5/"><img src="images/logo/JUnit5.svg" width="40" height="40"  alt="JUnit 5"/></a> 
+<a href="https://rest-assured.io/"> <img src="images/logo/rest_assured.png" title="REST-assured" alt="REST-assured" width="40" height="40"/> </a>
+<a href="https://gradle.org/"><img src="images/logo/Gradle.svg" width="40" height="40"  alt="Gradle"/></a>  
+<a href="https://selenide.org/"><img src="images/logo/Selenide.svg" width="40" height="40"  alt="Selenide"/></a>   
+<a href="ht[images](images)tps://github.com/allure-framework/allure2"><img src="images/logo/Allure.svg" width="40" height="40"  alt="Allure"/></a>    
+<a href="https://www.jenkins.io/"><img src="images/logo/Jenkins.svg" width="40" height="40"  alt="Jenkins"/></a>  
+<a href="https://www.browserstack.com/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/browserstack/browserstack-original.svg" title="Browserstack" alt="Browserstack" width="40" height="40"/> </a>
+<a href="https://appium.io/"> <img src="images/logo/appium.png" title="Appium" alt="Appium" width="40" height="40"/> </a>  
 </p>
 
 ____
