@@ -7,14 +7,11 @@ import screens.android.WikipediaSearchResultsScreen;
 import screens.android.WikipediaSearchScreen;
 import tests.TestBase;
 
-import java.net.MalformedURLException;
-
 import static com.codeborne.selenide.Selenide.back;
-import static com.codeborne.selenide.Selenide.sleep;
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
-@Tag("android")
+@Tag("emulator")
 public class WikipediaSearchTests extends TestBase {
 
     private final WikipediaSearchScreen searchScreen = new WikipediaSearchScreen();
@@ -35,7 +32,6 @@ public class WikipediaSearchTests extends TestBase {
 
         step("Perform search", () -> {
             searchScreen.searchFor(query);
-            sleep(500);
         });
         step("Verify result", () -> {
             assertThat(searchResultsScreen.getResultsCount()).isGreaterThan(0);
@@ -57,11 +53,9 @@ public class WikipediaSearchTests extends TestBase {
 
         step("Perform search", () -> {
             searchScreen.searchFor(query);
-            sleep(500);
         });
         step("Open page", () -> {
-            result = searchResultsScreen.ppenFoundArticle(articleNumber);
-            sleep(3000);
+            result = searchResultsScreen.openFoundArticle(articleNumber);
         });
 
         step("Verify result", () -> {
