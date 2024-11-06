@@ -51,22 +51,23 @@ ____
 <a id="console"></a>
 ## Команды для запуска из терминала
 ___
-***Локальный запуск:***
+***Локальный запуск через BrowserStack:***
 
-Для запуска через Browserstack:
 ```bash  
 gradle clean browserstack -DdeviceHost=browserstack -Dusername=ЛОГИН -Dpassword=ПАРОЛЬ
 ```
 Чтобы получить ЛОГИН и ПАРОЛЬ, можно зарегистрироваться на [BrowserStack](https://www.browserstack.com/)
 
 
-Для запуска через эмулятор:
+***Локальный запуск через эмулятор:***
+
 ```bash  
 gradle clean emulator -DdeviceHost=emulator -DdeviceName=ДЕВАЙС -DplatformVersion=ВЕРСИЯ
 ```
 По умолчанию:
 deviceName=Pixel 4 API 30
 platformVersion=11.0
+
 
 ***Удалённый запуск через Jenkins:***
 ```bash  
@@ -111,7 +112,7 @@ ____
 ## <img alt="BrowserStack" height="25" src="images/logo/BrowserStack.svg" width="25"/></a> Примеры видео выполнения тестов на BrowserStack
 ____
 <p align="center">
-<img title="BrowserStack Video" src="images/video/browserstack_video.mp4" width="200" alt="video">   
+<img title="BrowserStack Video" src="images/video/browserstack_video.gif" width="200" alt="video">   
 </p>
 
 ____
@@ -119,5 +120,5 @@ ____
 ## Пример видео выполнения тестов локально через эмулятор
 ____
 <p align="center">
-<img title="Emulator Video" src="images/video/emulator_video.mp4" width="200" alt="video">   
+<img title="Emulator Video" src="images/video/emulator_video.gif" width="200" alt="video">   
 </p>
