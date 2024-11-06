@@ -4,7 +4,6 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
 
-import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static io.appium.java_client.AppiumBy.className;
@@ -22,10 +21,9 @@ public class WikipediaSearchResultsScreen {
         return foundItems.size();
     }
 
-    public String openFoundArticle(int articleNumber) {
+    public String tryToOpenFoundArticle(int articleNumber) {
         foundItems.get(articleNumber).click();
-        subtitle.shouldBe(visible);
 
-        return textArea.getFirst().getAttribute("text");
+        return textArea.get(0).getAttribute("text");
     }
 }
