@@ -12,8 +12,7 @@ def aspectjWeaverVersion = "1.9.22",
     selenideVersion = "6.13.0",
     restAssuredVersion = "5.3.0",
     allureVersion = "2.21.0",
-    //junitVersion = "5.9.3",
-        junitVersion = "5.10.0",
+    junitVersion = "5.10.0",
     slf4jVersion = "2.0.7",
     appiumVersion = "8.3.0",
     ownerVersion = "1.0.4"
@@ -48,7 +47,7 @@ dependencies {
     )
 }
 
-tasks.withType(Test) {
+tasks.withType(Test).configureEach {
     useJUnitPlatform()
     systemProperties(System.getProperties())
 
@@ -60,20 +59,14 @@ tasks.withType(Test) {
     }
 }
 
-task android_tests(type: Test) {
+tasks.register('browserstack_tests', Test) {
     useJUnitPlatform {
-        includeTags("android")
+        includeTags("browserstack")
     }
 }
 
-task emulator_tests(type: Test) {
+tasks.register('emulator_tests', Test) {
     useJUnitPlatform {
         includeTags("emulator")
-    }
-}
-
-task ios_tests(type: Test) {
-    useJUnitPlatform {
-        includeTags("ios")
     }
 }

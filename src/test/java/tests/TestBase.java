@@ -20,15 +20,10 @@ public class TestBase {
     @BeforeAll
     static void beforeAll() {
 
-        switch (deviceHost) {
-            case "browserstack":
-                Configuration.browser = BrowserStackDriver.class.getName();
-                break;
-            case "emulator":
-                Configuration.browser = LocalDriver.class.getName();
-                break;
-            default:
-                Configuration.browser = LocalDriver.class.getName();
+        if (deviceHost.equals("browserstack")) {
+            Configuration.browser = BrowserStackDriver.class.getName();
+        } else {
+            Configuration.browser = LocalDriver.class.getName();
         }
 
         Configuration.browserSize = null;

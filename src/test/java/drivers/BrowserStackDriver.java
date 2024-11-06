@@ -1,14 +1,13 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import config.AuthConfig;
 import config.BrowserStackConfig;
-import config.DeviceConfig;
+import lombok.Getter;
+import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import utils.ConfigLoader;
 
 import javax.annotation.Nonnull;
 import java.net.MalformedURLException;
@@ -16,21 +15,21 @@ import java.net.URL;
 
 public class BrowserStackDriver implements WebDriverProvider {
 
+    @Getter
+    private static final BrowserStackConfig browserStackConfig = ConfigFactory.create(BrowserStackConfig.class);
+
     @Nonnull
     @Override
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
-        BrowserStackConfig browserStackConfig = ConfigLoader.getBrowserStackConfig();
-        AuthConfig authConfig = ConfigLoader.getAuthConfig();
 
         MutableCapabilities caps = new MutableCapabilities();
 
-        caps.setCapability("browserstack.user", authConfig.username());
-        caps.setCapability("browserstack.key", authConfig.password());
+        caps.setCapability("browserstack.user", browserStackConfig.username());
+        caps.setCapability("browserstack.key", browserStackConfig.password());
 
-        DeviceConfig deviceConfig = ConfigLoader.getDeviceConfig();
-        caps.setCapability("device", deviceConfig.deviceName());
-        caps.setCapability("os_version", deviceConfig.platformVersion());
-        caps.setCapability("app", deviceConfig.appUrl());
+        caps.setCapability("device", browserStackConfig.deviceName());
+        caps.setCapability("os_version", browserStackConfig.platformVersion());
+        caps.setCapability("app", browserStackConfig.appUrl());
 
         caps.setCapability("project", "Wikipedia Mobile Tests Java Project");
         caps.setCapability("build", "browserstack-build-1");
