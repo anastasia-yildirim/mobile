@@ -1,5 +1,10 @@
 package tests.browserstack;
 
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Story;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import screens.android.WikipediaSearchResultsScreen;
@@ -11,12 +16,17 @@ import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Tag("browserstack")
+@Epic("Тестирование Wikipedia")
+@Feature("Поиск в Wikipedia")
+@Story("Успешный и не успешный поиск статей")
 public class BrowserStackSearchTests extends TestBase {
 
     private final WikipediaSearchScreen searchScreen = new WikipediaSearchScreen();
     private final WikipediaSearchResultsScreen searchResultsScreen = new WikipediaSearchResultsScreen();
 
     @Test
+    @DisplayName("Успешный поиск")
+    @Owner("anastasiayildirim")
     void successfulSearchTest() {
         String query = "Appium";
 
@@ -27,6 +37,8 @@ public class BrowserStackSearchTests extends TestBase {
     }
 
     @Test
+    @DisplayName("Неуспешный поиск и открытие первой найденной статьи")
+    @Owner("anastasiayildirim")
     void unsuccessfulSearchAndOpenFirstResultTest() {
         String query = "Italy";
         AtomicReference<String> result = new AtomicReference<>();
