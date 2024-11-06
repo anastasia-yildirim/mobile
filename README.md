@@ -69,7 +69,7 @@ gradle clean browserstack -DdeviceHost=browserstack -Dusername=ЛОГИН -Dpass
 ***Локальный запуск через эмулятор:***
 
 ```bash  
-gradle clean emulator -DdeviceHost=emulator -DdeviceName=ДЕВАЙС -DplatformVersion=ВЕРСИЯ
+gradle clean emulator -DdeviceHost=emulator -DdeviceName=ДЕВАЙС -DplatformVersion=ВЕРСИЯ_ПЛАТФОРМЫ
 ```
 По умолчанию:
 - deviceName=Pixel 4 API 30
