@@ -56,7 +56,7 @@ ___
 ```bash  
 gradle clean browserstack -DdeviceHost=browserstack -Dusername=ЛОГИН -Dpassword=ПАРОЛЬ
 ```
-Чтобы получить ЛОГИН и ПАРОЛЬ, можно зарегистрироваться на [BrowserStack](https://www.browserstack.com/)
+Чтобы получить логин и пароль, можно зарегистрироваться на [BrowserStack](https://www.browserstack.com/) (или запустите тесты через Jenkins)
 
 
 ***Локальный запуск через эмулятор:***
@@ -65,8 +65,8 @@ gradle clean browserstack -DdeviceHost=browserstack -Dusername=ЛОГИН -Dpass
 gradle clean emulator -DdeviceHost=emulator -DdeviceName=ДЕВАЙС -DplatformVersion=ВЕРСИЯ
 ```
 По умолчанию:
-deviceName=Pixel 4 API 30
-platformVersion=11.0
+- deviceName=Pixel 4 API 30
+- platformVersion=11.0
 
 
 ***Удалённый запуск через Jenkins:***
