@@ -7,8 +7,8 @@ import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import screens.android.WikipediaSearchResultsScreen;
-import screens.android.WikipediaSearchScreen;
+import screens.WikipediaSearchResultsScreen;
+import screens.WikipediaSearchScreen;
 import tests.TestBase;
 import java.util.concurrent.atomic.AtomicReference;
 

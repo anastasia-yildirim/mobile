@@ -1,4 +1,4 @@
-package screens.android;
+package screens;
 
 import com.codeborne.selenide.SelenideElement;
 import lombok.Getter;
