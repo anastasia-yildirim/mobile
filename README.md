@@ -30,6 +30,7 @@ ____
 <a href="https://selenide.org/"><img src="images/logo/Selenide.svg" width="50" height="50"  alt="Selenide"/></a>   
 <a href="ht[images](images)tps://github.com/allure-framework/allure2"><img src="images/logo/Allure.svg" width="50" height="50"  alt="Allure"/></a>    
 <a href="https://www.jenkins.io/"><img src="images/logo/Jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>  
+<a href="https://www.browserstack.com/"><img src="images/logo/Browserstack.svg" width="50" height="50"  alt="BrowserStack"/></a>  
 </p>
 
 ____
@@ -109,7 +110,7 @@ ____
 
 ____
 <a id="video"></a>
-## <img alt="BrowserStack" height="25" src="images/logo/BrowserStack.svg" width="25"/></a> Примеры видео выполнения тестов на BrowserStack
+## <img alt="BrowserStack" height="25" src="images/logo/Browserstack.svg" width="20"/></a> Примеры видео выполнения тестов на BrowserStack
 ____
 <p align="center">
 <img title="BrowserStack Video" src="images/video/browserstack_video.gif" width="200" alt="video">   
