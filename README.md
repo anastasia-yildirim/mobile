@@ -75,8 +75,15 @@ gradle clean emulator -DdeviceHost=emulator -DdeviceName=ДЕВАЙС -Dplatform
 - deviceName=Pixel 4 API 30
 - platformVersion=11.0
 
+Перед запуском тестов необходимо установить и настроить сервер Appium и Uiautomator2. 
+После этого запустите сервер Appium с помощью команды:
 
-***Удалённый запуск через Jenkins:***
+```bash  
+appium server --base-path /wd/hub
+```
+
+
+***Удалённый запуск через Jenkins (только BrowserStack):***
 ```bash  
 clean browserstack -DdeviceHost=browserstack
 ```
