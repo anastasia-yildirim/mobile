@@ -35,7 +35,7 @@ ____
 <a href="https://selenide.org/"><img src="images/logo/Selenide.svg" width="40" height="40"  alt="Selenide"/></a>   
 <a href="ht[images](images)tps://github.com/allure-framework/allure2"><img src="images/logo/Allure.svg" width="40" height="40"  alt="Allure"/></a>    
 <a href="https://www.jenkins.io/"><img src="images/logo/Jenkins.svg" width="40" height="40"  alt="Jenkins"/></a>  
-<a href="https://www.browserstack.com/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/browserstack/browserstack-original.svg" title="Browserstack" alt="Browserstack" width="40" height="40"/> </a>
+<a href="https://www.browserstack.com/"> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/browserstack/browserstack-original.svg" title="Browserstack" alt="Browserstack" width="40" height="40"/></a>
 <a href="https://appium.io/"><img src="images/logo/appium.png" title="Appium" alt="Appium" width="40" height="40"/></a>  
 </p>
 
