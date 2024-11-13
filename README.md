@@ -90,7 +90,7 @@ clean browserstack -DdeviceHost=browserstack
 
 ___
 <a id="allure"></a>
-## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет](https://jenkins.autotests.cloud/job/029-anastasia-yildirim-qa_guru_java-wikipedia_mobile_tests/3/allure)</a>
+## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет](https://jenkins.autotests.cloud/job/029-anastasia-yildirim-qa_guru_java-wikipedia_mobile_tests/allure)</a>
 ___
 
 ### *Основная страница отчёта*
