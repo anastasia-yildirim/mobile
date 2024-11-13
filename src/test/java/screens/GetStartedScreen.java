@@ -27,6 +27,7 @@ public class GetStartedScreen {
     public void clickSkipButton() {
         skipButton.click();
     }
+
     public void checkPageTitleIsDisplayed(String expectedTitle) {
         assertThat(onboardingTabTitle.getText()).isEqualTo(expectedTitle);
     }

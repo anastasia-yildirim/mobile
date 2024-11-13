@@ -9,7 +9,6 @@ import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 
 import javax.annotation.Nonnull;
-
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;

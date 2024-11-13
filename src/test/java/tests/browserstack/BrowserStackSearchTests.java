@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import screens.WikipediaSearchResultsScreen;
 import screens.WikipediaSearchScreen;
 import tests.TestBase;
+
 import java.util.concurrent.atomic.AtomicReference;
 
 import static io.qameta.allure.Allure.step;

@@ -38,7 +38,7 @@ public class BrowserStackDriver implements WebDriverProvider {
         caps.setCapability("fullReset", true);
 
         try {
-            return new RemoteWebDriver (
+            return new RemoteWebDriver(
                     new URL(browserStackConfig.remoteWebDriverUrl()), caps);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
