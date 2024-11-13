@@ -1,6 +1,6 @@
 package helpers;
 
-import config.BrowserStackConfig;
+import config.TestEnvConfig;
 import drivers.BrowserStackDriver;
 
 import static io.restassured.RestAssured.given;
@@ -10,10 +10,10 @@ public class BrowserStackVideoHelper {
     public static String videoUrl(String sessionId) {
         String url = String.format("https://api.browserstack.com/app-automate/sessions/%s.json", sessionId);
 
-        BrowserStackConfig config = BrowserStackDriver.getBrowserStackConfig();
+        TestEnvConfig config = BrowserStackDriver.getTestEnvConfig();
 
         return given()
-                .auth().basic(config.username(), config.password())
+                .auth().basic(config.getUsername(), config.getPassword())
                 .get(url)
                 .then()
                 .log().status()

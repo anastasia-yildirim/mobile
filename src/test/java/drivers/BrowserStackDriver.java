@@ -1,7 +1,9 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import config.BrowserStackConfig;
+import config.AppConfig;
+import config.DeviceConfig;
+import config.TestEnvConfig;
 import lombok.Getter;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
@@ -16,7 +18,9 @@ import java.net.URL;
 public class BrowserStackDriver implements WebDriverProvider {
 
     @Getter
-    private static final BrowserStackConfig browserStackConfig = ConfigFactory.create(BrowserStackConfig.class);
+    private static final TestEnvConfig testEnvConfig = ConfigFactory.create(TestEnvConfig.class, System.getProperties());
+    private static final DeviceConfig deviceConfig = ConfigFactory.create(DeviceConfig.class, System.getProperties());
+    public static final AppConfig appConfig = ConfigFactory.create(AppConfig.class, System.getProperties());
 
     @Nonnull
     @Override
@@ -24,12 +28,12 @@ public class BrowserStackDriver implements WebDriverProvider {
 
         MutableCapabilities caps = new MutableCapabilities();
 
-        caps.setCapability("browserstack.user", browserStackConfig.username());
-        caps.setCapability("browserstack.key", browserStackConfig.password());
+        caps.setCapability("browserstack.user", testEnvConfig.getUsername());
+        caps.setCapability("browserstack.key", testEnvConfig.getPassword());
 
-        caps.setCapability("device", browserStackConfig.deviceName());
-        caps.setCapability("os_version", browserStackConfig.platformVersion());
-        caps.setCapability("app", browserStackConfig.appUrl());
+        caps.setCapability("device", deviceConfig.getDeviceName());
+        caps.setCapability("os_version", deviceConfig.getPlatformVersion());
+        caps.setCapability("app", appConfig.getAppUrl());
 
         caps.setCapability("project", "Wikipedia Mobile Tests Java Project");
         caps.setCapability("build", "browserstack-build-1");
@@ -39,7 +43,7 @@ public class BrowserStackDriver implements WebDriverProvider {
 
         try {
             return new RemoteWebDriver(
-                    new URL(browserStackConfig.remoteWebDriverUrl()), caps);
+                    new URL(testEnvConfig.getRemoteUrl()), caps);
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

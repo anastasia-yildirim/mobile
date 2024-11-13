@@ -2,16 +2,12 @@ package config;
 
 import org.aeonbits.owner.Config;
 
+@TestEnvConfig.LoadPolicy(TestEnvConfig.LoadType.MERGE)
 @Config.Sources({
-        "classpath:${deviceHost}.properties",
+        "system:properties",
+        "classpath:${deviceHost}.properties"
 })
-public interface LocalDeviceConfig extends Config {
-
-    @Key("deviceName")
-    String getDeviceName();
-
-    @Key("platformVersion")
-    String getPlatformVersion();
+public interface AppConfig extends Config {
 
     @Key("appPackage")
     String getAppPackage();
@@ -27,7 +23,4 @@ public interface LocalDeviceConfig extends Config {
 
     @Key("appPath")
     String getAppPath();
-
-    @Key("appiumServer")
-    String getAppiumServer();
 }

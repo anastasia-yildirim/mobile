@@ -1,7 +1,9 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import config.LocalDeviceConfig;
+import config.AppConfig;
+import config.DeviceConfig;
+import config.TestEnvConfig;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import org.aeonbits.owner.ConfigFactory;
@@ -21,7 +23,9 @@ import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
 public class LocalDriver implements WebDriverProvider {
 
-    public static final LocalDeviceConfig localConfig = ConfigFactory.create(LocalDeviceConfig.class, System.getProperties());
+    private static final TestEnvConfig testEnvConfig = ConfigFactory.create(TestEnvConfig.class, System.getProperties());
+    public static final DeviceConfig deviceConfig = ConfigFactory.create(DeviceConfig.class, System.getProperties());
+    public static final AppConfig appConfig = ConfigFactory.create(AppConfig.class, System.getProperties());
 
     @Nonnull
     @Override
@@ -30,27 +34,27 @@ public class LocalDriver implements WebDriverProvider {
 
         options.setAutomationName(ANDROID_UIAUTOMATOR2)
                 .setPlatformName(ANDROID)
-                .setPlatformVersion(localConfig.getPlatformVersion())
-                .setDeviceName(localConfig.getDeviceName())
+                .setPlatformVersion(deviceConfig.getPlatformVersion())
+                .setDeviceName(deviceConfig.getDeviceName())
                 .setApp(getAppPath())
-                .setAppPackage(localConfig.getAppPackage())
-                .setAppActivity(localConfig.getAppActivity());
+                .setAppPackage(appConfig.getAppPackage())
+                .setAppActivity(appConfig.getAppActivity());
 
         return new AndroidDriver(getAppiumServerUrl(), options);
     }
 
     public static URL getAppiumServerUrl() {
         try {
-            return new URL(localConfig.getAppiumServer());
+            return new URL(testEnvConfig.getRemoteUrl());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
     }
 
     private String getAppPath() {
-        String appVersion = localConfig.getAppVersion();
-        String appUrl = localConfig.getAppUrl() + appVersion;
-        String appPath = localConfig.getAppPath() + appVersion;
+        String appVersion = appConfig.getAppVersion();
+        String appUrl = appConfig.getAppUrl() + appVersion;
+        String appPath = appConfig.getAppPath() + appVersion;
 
         File app = new File(appPath);
         if (!app.exists()) {
